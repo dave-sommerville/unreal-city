@@ -1,0 +1,305 @@
+@charset "utf-8";
+
+html{
+    font-family:"poppins", "inter", sans-serif;
+}
+/* "Rowdies */
+
+.container {
+    width: min(100% - 30px, 1200px);
+    margin-inline: auto;
+}
+
+.flex{
+    display: flex;
+}
+/*
+    TO DO 
+    JavaScript 
+    -
+    Scaling down hero banner and leaving a fixed header upon 
+    scrolling, ideally with a smaller version of the logo in the center 
+    (the smaller version should be uniform across all pages)
+    -
+    The Sunsets and the citylights turn on with a particular trigger
+
+    -   Clean up the colours (all darker, especially dashboard) 
+    -   Clean up the roots
+    -   Clean up and expand the utils 
+    -   All Media Queries (3)
+        -   Index
+            -   Banner
+            -   Cityscape (table widths) 
+            -   Dashboard 
+            -   Footer
+    -   Replace images appropriately 
+    -   Proofread code for allignment and redundancy 
+    -   Figure out footer content
+    -   Format footer 
+    -   Design other pages
+        -   Header from reduced index 
+        -   Intial "page" is going to be styled using pure (mostly) css
+            -   An "arch" for the studios
+            -   "Glass" and an old sign for the Landromat
+            -   More to come can simply be a construction graphic 
+                -   Along with the beta buttons (possibly hidden) 
+        -   The Interior "page" can be illustrated (animated) with procreate
+
+
+*/
+
+
+:root{
+    --app-base-dark: #181818;
+    --app-base-darker: #141414;
+    --app-base-darkest: #111;
+    --app-window-lit: rgb(238, 209, 46);
+    --app-bg-light: rgb(245 250 255);
+    --app-window-1-gradient: linear-gradient(rgb(32 16 64), rgb(34 12 56));
+    --app-primary-color: #323081;
+    --app-secondary-color: #cc6704;
+    --app-border-radius: 8px;
+}
+
+body {
+    background-color: rgb(32 16 64);
+}
+
+
+
+.hero-banner-wrapper {
+    position: relative;
+    
+    &::before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100svh;
+        opacity: 0.6;
+        background-image: url('../img/hero-banner.jpg');
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        background-size: cover;
+  }
+  
+}
+.hero-banner {
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100svh;
+    align-items: center;
+
+    img{
+        width: 700px;   height: auto;
+    }
+}
+
+.button-box{
+    flex-direction: column;
+
+    p {
+        font-size: 3rem;
+        font-family: "Sedgwick Ave", "Poppins", arial;
+        line-height: 3rem;
+        height: fit-content;   width: 500px;
+        text-align: center;
+        padding: 25px;
+        border-radius: var(--app-border-radius);
+        margin: 25px; 
+        transition: all 0.5s ease;
+
+        &:hover {
+            scale: 1.02;
+        }
+    }
+
+    .what {
+        background-color: var(--app-primary-color);
+        color: var(--app-secondary-color);
+    }
+
+    .subscribe {
+        border: 2px solid var(--app-primary-color);
+        background-color: var(--app-secondary-color);
+        color: var(--app-primary-color);
+        font-weight: 600;
+    }
+
+}
+
+
+.cityscape {
+    align-items: flex-end;
+    margin-top: 200px;
+}
+
+.one, .six {
+    height: 80svh;
+    width: 200px;
+    background-image: var(--app-window-1-gradient);
+    transition: all 1s;
+
+    table {
+        height: 100%;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    td {
+        border: 25px  solid var(--app-base-dark);
+        border-bottom: 50px  solid var(--app-base-dark);
+        padding: 8px;
+    }
+
+    &:hover {
+        box-shadow: inset 0 80svh var(--app-window-lit);
+    }
+}
+
+.two, .five {
+    height: 70svh;
+    width: 125px;
+    background-image: var(--app-window-1-gradient);
+    transition: all 1s;
+
+    table {
+        height: 100%;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    td {
+        border: 20px  solid var(--app-base-darker);
+        border-bottom: 55px  solid var(--app-base-darker);
+        padding: 8px;
+    }
+
+    &:hover {
+        box-shadow: inset 0 70svh var(--app-window-lit);
+    }
+    
+}
+
+.three, .four {
+    height: 60svh;
+    width: 75px;
+    background-image: var(--app-window-1-gradient);
+    transition: all 1s;
+
+    table {
+        height: 100%;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    td {
+        border: 15px  solid var(--app-base-darkest);
+        border-bottom: 60px  solid var(--app-base-darkest);
+        padding: 8px;
+    }
+
+    &:hover {
+        box-shadow: inset 0 70svh var(--app-window-lit);
+    }    
+}
+
+.horizon {
+    height: 200px; 
+    margin: 0 20px;
+    background-color: #ec9a00;
+    border-bottom: 200px solid rgb(32 16 64);
+    width: calc(100% - 400px - 250px - 150px - 40px);
+    transition: all 1s ease;
+
+    &:hover {
+        height: 375px;
+        border-top-left-radius: 200px;
+        border-top-right-radius: 200px;
+    }
+}
+
+.dashboard-wrapper {
+    height: 500px; 
+    background-color: #615fd3;
+}
+
+.dashboard {
+    height: 500px;
+    margin: 250px 0;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.page {
+    width: calc(25% - 5px); height: 400px;
+    background-color: #615fd3;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px; 
+    border-radius: var(--app-border-radius);
+    transition: all 1s ease;
+
+    font-family: "Sedgwick Ave", "Poppins", arial;
+    font-size: 4rem;
+    color: var(--app-secondary-color);
+    line-height: 75px;
+    text-justify: auto;
+
+    &:hover {
+        box-shadow: inset 3px 1px 3px var(--app-primary-color);
+        background-color: #6c6bd6;
+
+        .summary {
+            background-color: #6c6bd6;
+        }
+    }
+    
+}
+
+.circle {
+    width: 200px;   height: 200px;
+    border-radius: 50%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--app-secondary-color);
+
+    i {
+        font-size: 7rem;
+        line-height: 200px;
+        color: var(--app-primary-color);
+    }
+}
+
+.summary {
+    width: fit-content;    height: 75px;
+    background-color: #6c6bd6;
+    justify-content: center;
+    margin: 25px;
+    padding: 0 10px; 
+    border-radius: var(--app-border-radius);
+    transition: all 1s ease;
+
+}
+
+.middle-banner-wrapper {
+    width: 100%;    height: 400px;
+    background: var(--app-bg-light) url(../img/middle-banner.jpg) no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+footer {
+    height: 90svh;  width: 100%;
+    background: rgb(32 16 64) url(../img/footer-bridge-1.PNG) no-repeat right bottom;
+    background-size: cover;
+    overflow: hidden;
+}
