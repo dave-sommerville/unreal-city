@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+/*---------------->
+
+Flex (grow and shrink?), column container, opacity, list style, text decoration, 
+centering ***** must get a better grasp on how things are centered 
+padding/margin? width/height (w-100,h-100), visibility? transitions? cursor, 
+shadow-touched 
+
+roots - colours, radius, 
+
+<------------------*/
+
+
+
+.container {
+    width: min(100% - 30px, 1200px);
+    margin-inline: auto;
+}
+
+.flex{
+    display: flex;
+}
+/*
+grow/shrink as well 
+*/
+
+:root{
+    --app-base-dark: #181818;
+    --app-base-darker: #141414;
+    --app-base-darkest: #111;
+    --app-window-lit: rgb(238, 209, 46);
+    --app-bg-light: rgb(245 250 255);
+    --app-window-1-gradient: linear-gradient(rgb(32 16 64), rgb(34 12 56));
+    --app-primary-color: #323081;
+    --app-secondary-color: #cc6704;
+    --app-border-radius: 8px;
+}
+
+/*
+.column 
+.opacity (10,...100) 
+width/height 100%
+transitions
+cursor 
+hint of shadow 
+
+
+
+
+*/

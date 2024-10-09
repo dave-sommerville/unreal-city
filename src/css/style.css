@@ -3,50 +3,9 @@
 html{
     font-family:"poppins", "inter", sans-serif;
 }
-/* "Rowdies */
 
-.container {
-    width: min(100% - 30px, 1200px);
-    margin-inline: auto;
-}
+/* create a small font library and add it to my head, ideally with a label */
 
-.flex{
-    display: flex;
-}
-/*
-    TO DO 
-    JavaScript 
-    -
-    Scaling down hero banner and leaving a fixed header upon 
-    scrolling, ideally with a smaller version of the logo in the center 
-    (the smaller version should be uniform across all pages)
-    -
-    The Sunsets and the citylights turn on with a particular trigger
-
-    -   Clean up the colours (all darker, especially dashboard) 
-    -   Clean up the roots
-    -   Clean up and expand the utils 
-    -   All Media Queries (3)
-        -   Index
-            -   Banner
-            -   Cityscape (table widths) 
-            -   Dashboard 
-            -   Footer
-    -   Replace images appropriately 
-    -   Proofread code for allignment and redundancy 
-    -   Figure out footer content
-    -   Format footer 
-    -   Design other pages
-        -   Header from reduced index 
-        -   Intial "page" is going to be styled using pure (mostly) css
-            -   An "arch" for the studios
-            -   "Glass" and an old sign for the Landromat
-            -   More to come can simply be a construction graphic 
-                -   Along with the beta buttons (possibly hidden) 
-        -   The Interior "page" can be illustrated (animated) with procreate
-
-
-*/
 
 
 :root{

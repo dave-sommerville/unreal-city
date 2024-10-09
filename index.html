@@ -1,72 +1,47 @@
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Dave Sommerville">
-        <meta name="description" content="My Web Project">
-        <meta name="keywords" content="html, css, web, seo, web development">
-        <title>Unreal City</title>
-        <link rel="icon" href="./src/img/favicon.png" type="image/x-icon">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap" rel="stylesheet">
-        <link 
-            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=inter">
-        <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mrspecht/cdn/reset.css" media="all">
-        <link rel="stylesheet" href="./src/css/style.css" media="all">
+    
+
+<head>
+    <meta charset="utf-8">  <!-- May want to consider expanding for SEO-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Dave Sommerville">
+    <meta name="description" content="Explore Unreal City – a hub for web development and design tips. Learn HTML, CSS, JavaScript, and more.">
+    <meta name="theme-color" content="#ffffff">
+    <title>Unreal City</title>
+    <link rel="icon" href="./src/img/favicon-32x32.png" sizes="32x32"> <!-- NEED TO PREPARE THESE-->
+    <link rel="icon" href="./src/img/favicon-16x16.png" sizes="16x16">
+    <link rel="apple-touch-icon" href="./src/img/apple-touch-icon.png">
+    <!--  External stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- Normalize (in place of reset), and preloading main stylesheets-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preload" href="./src/css/style.css" as="style">
+    <link rel="preload" href="./src/css/utils.css" as="style">
+    <link rel="stylesheet" href="./src/css/style.css" media="all">
+    <link rel="stylesheet" href="./src/css/utils.css" media="all">
+    <!-- Eventually, 
+    <script src="./src/js/script.js" defer></script>
+                    Javascript -->
+</head>
+
         <!--
-            Head should hold up pretty good. I do want to create and link my 
-            own reset eventually so I can completely understand what its 
-            function is. 
+            Optional Head
+<meta property="og:title" content="Unreal City - Web Development & Design">
+<meta property="og:description" content="Explore Unreal City – a hub for web development and design tips.">
+<meta property="og:image" content="https://example.com/image.jpg">
+<meta property="og:url" content="https://example.com/">
+
+<meta name="twitter:card" content="summary_large_image"> ** need to understand better 
+
+<link rel="icon" href="./src/img/favicon-32x32.png" sizes="32x32">
+<link rel="icon" href="./src/img/favicon-16x16.png" sizes="16x16">
+<link rel="apple-touch-icon" href="./src/img/apple-touch-icon.png">
+
+
         -->
-    </head>
-
-<!--
-    Idea Bank
-        -   Galley
-            -   My Photography
-            -   Finding other artists to show case 
-                **Social Media bulletin board 
-        -   Newspaper 
-            -   Subscription 
-            -   Zines <mine and others>
-        -   Library
-            -   Mission Statement 
-            -   Story
-                **Call for the Commons 
-        -   Landromat - SpeakEasy/Rave
-                -   a "night" mode to access the rave, but right now
-                the closest thing to a rave I could think of is an alternating 
-                div
-
-    Spaces for Rent 
-        -   The Real Escape
-        -   Michayla
-                - Other Local artists 
-        -   VA Cafe 
-                - Other Local Cafes 
-        -   Queer spaces 
-        -   local zines 
-        -   Local Winnipeg Artists 
-
-    Activism
-    -   Idigenous affairs
-    -   Land back
-    -   Climate activism
-    -   Socialism
-    -   Trans Rights
-    -   Immigration
-    -   Queer celebration and culture 
-
-    **  Graffiti js program
-    **  Geocaching 
-
-
--->
-
     <body>
         <header>
             <!-- 
@@ -85,6 +60,7 @@
             </section>
 
         </header>
+        
         <main>
             <!--
             Currently "buildings" transition with hover, but I intend
