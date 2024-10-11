@@ -1,29 +1,79 @@
 @charset "utf-8";
 
-/*---------------->
-
-Flex (grow and shrink?), column container, opacity, list style, text decoration, 
-centering ***** must get a better grasp on how things are centered 
-padding/margin? width/height (w-100,h-100), visibility? transitions? cursor, 
-shadow-touched 
-
-roots - colours, radius, 
-
-<------------------*/
-
-
 
 .container {
     width: min(100% - 30px, 1200px);
     margin-inline: auto;
 }
 
-.flex{
+
+.flex {
     display: flex;
 }
+.f-col {
+    flex-direction: column;
+}
+
+.f-row {
+        flex-direction: row;
+}
+
+.f-grow {
+    flex: 1;
+}
+
+.f-shrink {
+    flex: 0;
+}
+
 /*
-grow/shrink as well 
+    Opacity 
 */
+
+.op-10 {
+    opacity: 0.1;
+}
+
+.op-20 {
+    opacity: 0.2;
+}
+
+.op-30 {
+    opacity: 0.3;
+}
+
+.op-40 {
+    opacity: 0.4;
+}
+
+.op-50 {
+    opacity: 0.5;
+}
+
+.op-60 {
+    opacity: 0.6;
+}
+
+.op-70 {
+    opacity: 0.7;
+}
+
+.op-80 {
+    opacity: 0.8;
+}
+
+.op-90 {
+    opacity: 0.9; 
+}
+
+/*
+    MARGINS
+*/
+
+.mar-10 {
+    
+}
+
 
 :root{
     --app-base-dark: #181818;
@@ -37,12 +87,27 @@ grow/shrink as well
     --app-border-radius: 8px;
 }
 
+.ease-slow {
+    transition: all 1s ease-in-out;
+}
+
+.ease-med {
+    transition: all 0.6s ease-in-out;
+}
+
+.ease-quick {
+    transition: all 0.3s ease-in-out;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+
 /*
-.column 
 .opacity (10,...100) 
 width/height 100%
-transitions
-cursor 
+
 hint of shadow 
 
 
