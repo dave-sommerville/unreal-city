@@ -4,10 +4,6 @@ html{
     font-family:"poppins", "inter", sans-serif;
 }
 
-/* create a small font library and add it to my head, ideally with a label */
-
-
-
 :root{
     --app-base-dark: #181818;
     --app-base-darker: #141414;
@@ -21,80 +17,43 @@ html{
 }
 
 body {
-    background-color: rgb(32 16 64);
+    background-color: rgb(17, 6, 39);
 }
 
-
-
-.hero-banner-wrapper {
+main {
+    width: 100%;        height: 100svh;
     position: relative;
-    
-    &::before {
-        content: ' ';
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100svh;
-        opacity: 0.6;
-        background-image: url('../img/hero-banner.jpg');
-        background-repeat: no-repeat;
-        background-position: 50% 0;
-        background-size: cover;
-  }
-  
-}
-.hero-banner {
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100svh;
-    align-items: center;
-
-    img{
-        width: 700px;   height: auto;
-    }
 }
 
-.button-box{
-    flex-direction: column;
+.title-button {
+    width: 600px;
+    height: 100%;
+    padding-top: 200px;
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: right;
+    align-items: center;
+    text-align: center;
+}
 
-    p {
-        font-size: 3rem;
-        font-family: "Sedgwick Ave", "Poppins", arial;
-        line-height: 3rem;
-        height: fit-content;   width: 500px;
-        text-align: center;
-        padding: 25px;
-        border-radius: var(--app-border-radius);
-        margin: 25px; 
-        transition: all 0.5s ease;
 
-        &:hover {
-            scale: 1.02;
-        }
-    }
-
-    .what {
-        background-color: var(--app-primary-color);
-        color: var(--app-secondary-color);
-    }
-
-    .subscribe {
-        border: 2px solid var(--app-primary-color);
-        background-color: var(--app-secondary-color);
-        color: var(--app-primary-color);
-        font-weight: 600;
-    }
-
+h1 {
+    width: auto; /* Let it adjust based on content */
+    height: auto;
+    font-family: "Fredericka the Great", serif;
+    font-size: 110px;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    line-height: 1.2; /* Adjust line height if needed */
 }
 
 
 .cityscape {
+    height: 100svh;
     align-items: flex-end;
-    margin-top: 200px;
 }
 
 .one, .six {
@@ -114,11 +73,11 @@ body {
         border-bottom: 50px  solid var(--app-base-dark);
         padding: 8px;
     }
+}
 
-    &:hover {
+    .one.active, .six.active {
         box-shadow: inset 0 80svh var(--app-window-lit);
     }
-}
 
 .two, .five {
     height: 70svh;
@@ -137,13 +96,11 @@ body {
         border-bottom: 55px  solid var(--app-base-darker);
         padding: 8px;
     }
-
-    &:hover {
+}
+   .two.active, .five.active {
         box-shadow: inset 0 70svh var(--app-window-lit);
     }
     
-}
-
 .three, .four {
     height: 60svh;
     width: 75px;
@@ -161,104 +118,36 @@ body {
         border-bottom: 60px  solid var(--app-base-darkest);
         padding: 8px;
     }
+}
 
-    &:hover {
+    .three.active, .four.active {
         box-shadow: inset 0 70svh var(--app-window-lit);
     }    
-}
 
 .horizon {
-    height: 200px; 
+    height: 160px; 
     margin: 0 20px;
     background-color: #ec9a00;
-    border-bottom: 200px solid rgb(32 16 64);
+    border-top-left-radius: 160px;
+    border-top-right-radius: 160px;
     width: calc(100% - 400px - 250px - 150px - 40px);
     transition: all 1s ease;
-
-    &:hover {
-        height: 375px;
-        border-top-left-radius: 200px;
-        border-top-right-radius: 200px;
+}
+    .horizon.active {
+        height: 0px;
+        border-radius: 0;
     }
-}
 
-.dashboard-wrapper {
-    height: 500px; 
-    background-color: #615fd3;
-}
-
-.dashboard {
-    height: 500px;
-    margin: 250px 0;
-    align-items: center;
-    gap: 10px;
-
-}
-
-.page {
-    width: calc(25% - 5px); height: 400px;
-    background-color: #615fd3;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 25px; 
-    border-radius: var(--app-border-radius);
-    transition: all 1s ease;
-
-    font-family: "Sedgwick Ave", "Poppins", arial;
-    font-size: 4rem;
-    color: var(--app-secondary-color);
-    line-height: 75px;
-    text-justify: auto;
-
-    &:hover {
-        box-shadow: inset 3px 1px 3px var(--app-primary-color);
-        background-color: #6c6bd6;
-
-        .summary {
-            background-color: #6c6bd6;
-        }
-    }
-    
-}
-
-.circle {
-    width: 200px;   height: 200px;
-    border-radius: 50%;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--app-secondary-color);
-
-    i {
-        font-size: 7rem;
-        line-height: 200px;
-        color: var(--app-primary-color);
-    }
-}
-
-.summary {
-    width: fit-content;    height: 75px;
-    background-color: #6c6bd6;
-    justify-content: center;
-    margin: 25px;
-    padding: 0 10px; 
-    border-radius: var(--app-border-radius);
-    transition: all 1s ease;
-
-}
-
-.middle-banner-wrapper {
-    width: 100%;    height: 400px;
-    background: var(--app-bg-light) url(../img/middle-banner.jpg) no-repeat center center;
-    background-attachment: fixed;
+.banner {
+    width: 100%;        height: 400px; 
+    background: #fff url("../img/city-wall.jpg") no-repeat center center;
     background-size: cover;
+    background-attachment: fixed;
 }
-
 
 footer {
     height: 90svh;  width: 100%;
-    background: rgb(32 16 64) url(../img/footer-bridge-1.PNG) no-repeat right bottom;
+    background: rgb(106, 92, 136) url(../img/footer-bridge-1.PNG) no-repeat right bottom;
     background-size: cover;
     overflow: hidden;
 }
