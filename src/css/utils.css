@@ -6,6 +6,10 @@
     margin-inline: auto;
 }
 
+.spacer {
+    height: 500px; 
+    width: 100%;
+}
 
 .flex {
     display: flex;
