@@ -5,51 +5,51 @@ html{
 }
 
 :root{
-    --app-base-dark: #181818;
-    --app-base-darker: #141414;
-    --app-base-darkest: #111;
-    --app-window-lit: rgb(238, 209, 46);
-    --app-bg-light: rgb(245 250 255);
-    --app-window-1-gradient: linear-gradient(rgb(32 16 64), rgb(34 12 56));
-    --app-primary-color: #323081;
-    --app-secondary-color: #cc6704;
-    --app-border-radius: 8px;
+    --app-bg-color: #110627;
+    --app-window-dark: #123;
+    --app-window-lit: #eed12e;
+    --app-text-light: #fefefe;
+    --app-text-dark: #012; 
+    --app-building-01: #181818;
+    --app-building-02: #141414;
+    --app-building-03: #111;
+    --app-building-04: #101010;
 }
 
 body {
-    background-color: rgb(17, 6, 39);
+    background-color: var(--app-bg-color);
 }
 
 
 .title-button {
-    width: 600px;
+    max-width: 700px;
     height: 100%;
-    padding-top: 200px;
+    padding-top: 100px;
     position: fixed;
     top: 50%; 
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -1;
+    transition: all 0.2s ease;
     justify-content: right;
     align-items: center;
     text-align: center;
 }
 
-
 h1 {
     width: auto; 
     height: auto;
     font-family: "Fredericka the Great", serif;
-    font-size: 110px;
+    font-size: 120px;
     font-weight: 400;
-    color: #fff;
+    color: var(--app-text-light);
     text-align: center;
     line-height: 1.2; 
 }
 
 
 .cityscape {
-    height: 100svh;     width: 100%; 
+    min-height: 100svh;     width: 100%; 
     background-attachment: fixed;
     top: 0;
     left: 0;
@@ -57,11 +57,11 @@ h1 {
     z-index: 10;
 }
 
-.one, .six {
+.first-left, .first-right {
     height: 80svh;
     width: 200px;
 
-    background-image: var(--app-window-1-gradient);
+    background-color: var(--app-window-dark);
     transition: all 1s;
 
     table {
@@ -71,20 +71,20 @@ h1 {
     }
 
     td {
-        border: 25px  solid var(--app-base-dark);
-        border-bottom: 50px  solid var(--app-base-dark);
+        border: 25px  solid var(--app-building-01);
+        border-bottom: 50px  solid var(--app-building-01);
         padding: 8px;
     }
 }
 
-    .one.active, .six.active {
+    .first-left.active, .first-right.active {
         box-shadow: inset 0 80svh var(--app-window-lit);
     }
 
-.two, .five {
+.second-left, .second-right {
     height: 70svh;
     width: 125px;
-    background-image: var(--app-window-1-gradient);
+    background-color: var(--app-window-dark);
     transition: all 1s;
 
     table {
@@ -94,19 +94,19 @@ h1 {
     }
     
     td {
-        border: 20px  solid var(--app-base-darker);
-        border-bottom: 55px  solid var(--app-base-darker);
+        border: 20px  solid var(--app-building-02);
+        border-bottom: 55px  solid var(--app-building-02);
         padding: 8px;
     }
 }
-   .two.active, .five.active {
+   .second-left.active, .second-right.active {
         box-shadow: inset 0 70svh var(--app-window-lit);
     }
-    
-.three, .four {
+
+.third-left, .third-right { 
     height: 60svh;
     width: 75px;
-    background-image: var(--app-window-1-gradient);
+    background-color: var(--app-window-dark);
     transition: all 1s;
 
     table {
@@ -116,23 +116,45 @@ h1 {
     }
     
     td {
-        border: 15px  solid var(--app-base-darkest);
-        border-bottom: 60px  solid var(--app-base-darkest);
+        border: 15px  solid var(--app-building-03);
+        border-bottom: 60px  solid var(--app-building-03);
         padding: 8px;
     }
 }
 
-    .three.active, .four.active {
+    .third-left.active, .third-right.active {
         box-shadow: inset 0 70svh var(--app-window-lit);
-    }    
-
+    }
+    
+.forth-left, .forth-right {
+    height: 50svh;
+    width: 40px;
+    background-color: var(--app-window-dark);
+    transition: all 1s;
+   
+    table {
+        height: 100%;
+        width: 100%;
+        border-collapse: collapse;
+    }
+        
+        td {
+            border: 10px  solid var(--app-building-04);
+            border-bottom: 64px  solid var(--app-building-04);
+            padding: 8px;
+        }
+    }
+        .forth-left.active, .forth-right.active {
+            box-shadow: inset 0 70svh var(--app-window-lit);
+        }    
+    
 .horizon {
     height: 160px; 
-    margin: 0 20px;
     background-color: #ec9a00;
-    border-top-left-radius: 160px;
-    border-top-right-radius: 160px;
-    width: calc(100% - 400px - 250px - 150px - 40px);
+    border-top-left-radius: 200px;
+    border-top-right-radius:200px;
+    border-bottom: solid 100px var(--app-bg-color);
+    width: 100%;
     transition: all 1s ease;
 }
     .horizon.active {
@@ -140,19 +162,45 @@ h1 {
         border-radius: 0;
     }
 
+        @media (max-width: 1000px) {
+            .first-left, .first-right {
+                transition: none;
+                display: none;
+            }
+
+            h1 {
+                font-size: 75px;
+            }
+          }
+
+          @media (max-width: 580px) {
+            .second-left, .second-right {
+                transition: none;
+                display: none;
+            }
+
+            h1 {
+                font-size: 50px;
+            }
+          }
+
+.glass-top {
+    position: absolute;
+    z-index: 100;
+}
+
 article { 
-    height: 100svh;     width: 100%;
-    background: #fff url("../img/unreal-city-15.jpg") no-repeat center center;
+    height: 95svh;     width: 100%;
+    background: #fff url("../img/back-ground.jpg") no-repeat bottom center;
     background-size:cover;
     position: relative;
     z-index: -10;
-    backdrop-filter: blur(100px);
     overflow: visible;
 
     &::before {
         content: "";
         background-color: rgb(255 255 255 / 0.1);
-        backdrop-filter: blur(10px);
+        backdrop-filter: brightness(0.75) blur(10px);
         background-size: cover; 
         background-position: center; 
         position: absolute; 
@@ -160,16 +208,81 @@ article {
         left: 0;
         width: 100%; 
         height: 100%; 
-        z-index: 100;
+        z-index: 10;
     }
 }
 
+h3 {
+    font-family: "Fredericka the Great", serif;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 100px;
+    color: #123;
+    writing-mode: vertical-lr;
+    margin: 75px 25px;
+}
+
+h4 {
+    margin: 45px 0 10px 25px;
+    font-family: "Fredericka the Great", serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #123;
+}
+
+h5 {
+    margin: 45px 0 10px 25px;
+    font-family: "Fredericka the Great", serif;
+    font-size: 48px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.about-us {
+    width: 100%; height: 100%;
+    padding: 20px 160px 20px 0px;
+    p {
+        font-family: "Special Elite", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        color: #fff;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    button {    
+        width: fit-content;    height: fit-content; 
+        margin: 10px;
+        padding: 0 10px;
+        align-self: center;
+        background-color: transparent;
+        backdrop-filter: saturate(0%);
+        line-height: 50px;
+        font-family: "Special Elite", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 24px;
+        color: #fff;
+        border: solid 2px #123;
+        border-radius: 15px;
+    }
+}
+
+.back-drop {
+    border-radius: 15px;
+}
+
+.title {
+    width: 100%;    height: 125px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    background-color: var(--app-bg-color);
+    text-align: center;
+    align-self: flex-end;
+    z-index: 100;
+}
+
  .photo-display {
-    background: #fff url("../img/city-wall.jpg") no-repeat center center;
-    background-size: cover;
-    background-attachment: fixed;
-    top: 0;
-    right: 0;
     column-count: 3; 
     column-gap: 30px;
     column-width: 300px;
@@ -184,3 +297,13 @@ article {
         border-radius: 8px;
       }
  }
+
+ .more {
+    width: 100%;    height: 500px;
+    background: #fff url("../img/poster-wall.jpg") no-repeat top center;
+    background-size: cover;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+ }
+

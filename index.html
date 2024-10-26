@@ -14,8 +14,8 @@
     <!--  External stylesheets -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <!-- Normalize (in place of reset), and preloading main stylesheets-->
@@ -26,14 +26,12 @@
 </head>
     <body>
         <header>
-        </header>
-        <main>
-            <section class="title-button f-col flex">
-                <h1 class="flex">UNREAL CITY</h1>
-                <p></p>
-            </section>
+
             <section class="cityscape flex container">
-                <div class="buidling flex one">
+                <div class="title-button f-col flex">
+                    <h1 class="toggle">UNREAL CITY</h1>
+                </div>
+                <div class="first-left">
                     <table>
                     <tbody>
                         <tr>
@@ -87,7 +85,7 @@
                     </tbody>
                     </table>
                 </div>
-                <div class="buidling flex two">
+                <div class="second-left">
                     <table>
                         <tbody>
                             <tr>
@@ -128,7 +126,7 @@
                         </tbody>
                         </table>    
                 </div>
-                <div class="buidling flex three">
+                <div class="third-left">
                     <table>
                         <tbody>
                             <tr>
@@ -156,10 +154,52 @@
                                 <td></td>
                             </tr>
                         </tbody>
-                        </table>    
+                    </table>    
                 </div>
+                <div class="forth-left">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>    
+                </div>                
                 <div class="horizon"></div>
-                <div class="buidling flex four">
+                <div class="forth-right">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                        </table>    
+                </div>                
+                <div class="third-right">
                     <table>
                         <tbody>
                             <tr>
@@ -189,7 +229,7 @@
                         </tbody>
                         </table>    
                 </div>
-                <div class="buidling flex five">
+                <div class="second-right">
                     <table>
                         <tbody>
                             <tr>
@@ -230,7 +270,7 @@
                         </tbody>
                         </table>    
                 </div>
-                <div class="buidling flex six">
+                <div class="first-right">
                     <table>
                         <tbody>
                             <tr>
@@ -283,11 +323,42 @@
                             </tr>
                         </tbody>
                     </table>    
-                </div>
+                </div> 
             </section>
+        </header>
+        <main class="container">
             <section>
-                <article>
-                    <h3></h3>
+                <article class="flex">
+                    <div class="glass-top flex">
+                        <h3>Unreal City</h3>
+                        <div class="about-us flex f-col">
+                            <h4>Neither here nor there</h4>
+                            <div class="back-drop">
+                                <p>
+                                    The future of this space is uncertain, shaped by what I create—and I love creating. 
+                                    I've explored various artistic avenues, with a collection of unfinished novels and TTRPG campaigns, 
+                                    sketches, poems, plays, plots, and more. The point is, I thrive on making things. 
+                                    Most recently, I've turned my attention to the art of web development. 
+                                    It's a powerful creative tool, and as a student, I find that I learn best through experimentation and play.
+                                </p>
+                                <p>
+                                    My other passion is capturing the essence of my city through photography. 
+                                    This city serves as my muse in many ways. I cherish its deep Indigenous history and 
+                                    its diverse, ever-evolving cultural landscape. It is creative, queer, unique, undeniably flawed, 
+                                    and yet, undeniably beautiful.
+                                </p>
+                                <p>
+                                    This page is a showcase of my evolving interests. As my styles and skills grow, 
+                                    so too will this space. If you're a fellow creative spirit, I'd love to connect. 
+                                    The future of this page is wide open, and I'm always open to collaboration.
+                                </p>                                                            </div> 
+                            <button>Who am i?</button>
+                            <button>Like to make?</button>
+                        </div>
+                    </div>
+                            <div class="title">
+                                <h5>The Gallery</h4>
+                            </div>                            
                 </article>
             </section>
             <section class="photo-display">
@@ -325,6 +396,11 @@
                 <img src="./src/img/unreal-city-32.jpg" alt="Downtown">
 
             </section>
-        </main>
+            </main>
+            <footer>
+            <section class="more flex">
+                <img src="./src/img/artists-wanted.png">
+            </section>
+            </footer>
     </body>
 </html>

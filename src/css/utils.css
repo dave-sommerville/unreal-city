@@ -1,15 +1,37 @@
 @charset "utf-8";
 
+/*------------------------------->
+        Essential
+<--------------------------------*/
 
 .container {
     width: min(100% - 30px, 1200px);
     margin-inline: auto;
 }
 
+/*------------------------------->
+Disposable ***discard after use***
+<--------------------------------*/
+
 .spacer {
-    height: 500px; 
+    height:500px; 
     width: 100%;
 }
+
+/* Aspect ratios */ 
+/*------------------------------->
+        Roots        
+<--------------------------------*/
+
+
+/*------------------------------->
+        Fonts
+<--------------------------------*/
+
+
+/*------------------------------->
+        Flex
+<--------------------------------*/
 
 .flex {
     display: flex;
@@ -30,9 +52,9 @@
     flex: 0;
 }
 
-/*
-    Opacity 
-*/
+/*------------------------------->
+        Opacity
+<--------------------------------*/
 
 .op-10 {
     opacity: 0.1;
@@ -70,19 +92,56 @@
     opacity: 0.9; 
 }
 
+/*------------------------------->
+       Margins 
+<--------------------------------*/
 
-
-:root{
-    --app-base-dark: #181818;
-    --app-base-darker: #141414;
-    --app-base-darkest: #111;
-    --app-window-lit: rgb(238, 209, 46);
-    --app-bg-light: rgb(245 250 255);
-    --app-window-1-gradient: linear-gradient(rgb(32 16 64), rgb(34 12 56));
-    --app-primary-color: #323081;
-    --app-secondary-color: #cc6704;
-    --app-border-radius: 8px;
+.mar-10 {
+    margin: 10px;
 }
+
+.mar-25 {
+    margin: 25px;
+}
+
+.mar-50 {
+    margin: 50px;
+}
+.mar-100 {
+    margin: 100px;
+}
+
+.mar-200 {
+    margin: 200px;
+}
+
+/*------------------------------->
+      Padding  
+<--------------------------------*/
+
+.pad-10 {
+    padding: 10px;
+}
+
+.pad-25 {
+    padding: 25px;
+}
+
+.pad-50 {
+    padding: 50px;
+}
+
+.pad-100 {
+    padding: 100px;
+}
+
+.pad-200 {
+    padding: 200px;
+}
+
+/*------------------------------->
+        Transitions 
+<--------------------------------*/
 
 .ease-slow {
     transition: all 1s ease-in-out;
@@ -96,18 +155,34 @@
     transition: all 0.3s ease-in-out;
 }
 
+.visible {
+    display: visible;
+    opacity: 1;
+}
+
+.hidden {
+    display: hidden;
+    opacity: 0;
+}
+
+
+/*------------------------------->
+        Misc.
+<--------------------------------*/
+
+.circle {
+    border-radius: 50%;
+}
+
 .cursor-pointer {
     cursor: pointer;
 }
 
 
-/*
-.opacity (10,...100) 
-width/height 100%
+.w-100 {
+    width: 100%;
+}
 
-hint of shadow 
-
-
-
-
-*/
+.h-100 {
+    height: 100%;
+}

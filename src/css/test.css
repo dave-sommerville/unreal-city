@@ -1,22 +1,36 @@
 @charset "utf-8";
 
+section {
+	perspective: 400px; 
+}
 
-
-
-/*
-.top-fixed {
-	height: 200px;		width: 200px; 
-	position: fixed;
+.blue {
+	width: 400px;	height: 500px;
 	background-color: blue;
-	top: 0;
-	z-index: -1;
+	margin: 100px;
+	transform: rotateX(20deg);
 }
 
-.middle-bar {
-	height: 500px;	width: 100%; 
-	background-attachment: fixed;
-	top: 200px;
-	left: 0;
-	background-color: aqua;
-	z-index: 100;
+.green {
+	width: 400px;	height: 500px;
+	background-color: green;
+  box-shadow: inset 200px 0 0 #123, inset -200px 0 0 #123;
+	transition: all 1s ease; 
+
+	&:hover {
+		box-shadow: none;
+	}
 }
+
+.red {
+	width: 100px;		height: 100px;
+	border-radius: 50%;
+	border-right: solid 50px #123;
+	border-left: solid 50px #123;
+	transition: border 1s ease;
+
+	&:hover {
+		border: none;
+	}
+}
+
