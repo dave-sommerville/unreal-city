@@ -154,17 +154,17 @@ Disposable ***discard after use***
 .ease-quick {
     transition: all 0.3s ease-in-out;
 }
-
+/*
 .visible {
     display: visible;
     opacity: 1;
 }
-
+*//*
 .hidden {
     display: hidden;
     opacity: 0;
 }
-
+*/
 
 /*------------------------------->
         Misc.

@@ -1,0 +1,151 @@
+@charset "utf-8";
+
+body {
+	background-color: #012;
+}
+
+header {
+	height: 80svh;
+	position: relative;
+}
+
+.paraOne {
+	height: 300px;	width: auto;
+	position: absolute;
+	top: 400px;
+	right: 20px;
+	animation: surfing linear;
+	animation-timeline: scroll();
+}
+
+
+
+.circle-object {
+  position: absolute;
+	left: 800px;
+	top: 400px;
+	transform: scale(6);
+	transition: scale 6s ease;
+	animation: surfing 2s linear infinite;
+}
+
+@keyframes circle-animation {
+  0% {
+    transform: translateX(200px) translateY(0); /* Start at the right */
+  }
+  25% {
+    transform: translateX(0) translateY(200px); /* Move to the bottom */
+  }
+  50% {
+    transform: translateX(-200px) translateY(0); /* Move to the left */
+  }
+  75% {
+    transform: translateX(0) translateY(-200px); /* Move to the top */
+  }
+  100% {
+    transform: translateX(200px) translateY(0); /* Loop back to the right */
+  }
+}
+
+.astronauts {
+	width: 500px;
+	height: 250px;
+	position: relative; 
+
+	img {
+			width: 500px;
+			height: 250px;
+	}
+
+	&::before {
+			content: "";
+			position: absolute; 
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #fff url("../img/code-bg.jpg") repeat center center;
+			background-attachment: fixed;
+			background-size: cover; 
+			z-index: -1; 
+	}
+
+}
+
+/*			--	Cracks Effect --				*/
+:root {
+	--cracks-w: 500px;
+	--cracks-l: 400px;
+}
+
+.cracks-effect-1 {
+	--_cracks-w: var(--cracks-w);
+	--_cracks-l: var(--cracks-l);
+
+	width: 400px;
+	height: 500px;
+	position: relative; 
+
+	img {
+			width: 400px;
+			height: 500px;
+	}
+
+	&::before {
+			content: "";
+			position: absolute; 
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #fff url("../img/vs-code-bg.jpg") repeat center center;
+			background-attachment: fixed;
+			background-size: cover; 
+			z-index: -1; 
+	}
+}
+
+
+.rotating-object {
+  animation: circular-motion 5s infinite linear;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes circular-motion {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes enbiggen {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+	transform: scale(5);
+	}
+}
+
+@keyframes surfing {
+  0% {
+    transform: translateX(100px) translateY(0); /* Start at the right */
+  }
+  25% {
+    transform: translateX(0) translateY(75px); /* Move to the bottom */
+  }
+  50% {
+    transform: translateX(-100px) translateY(0); /* Move to the left */
+  }
+	75% {
+		transform: translateX(0) translateY(100px); /* Move to the bottom */
+	}
+	100% {
+		transform: translateX(100px) translateY(0); /* Start at the right */
+	}
+}

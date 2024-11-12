@@ -1,309 +1,189 @@
 @charset "utf-8";
 
-html{
-    font-family:"poppins", "inter", sans-serif;
-}
-
-:root{
-    --app-bg-color: #110627;
-    --app-window-dark: #123;
-    --app-window-lit: #eed12e;
-    --app-text-light: #fefefe;
-    --app-text-dark: #012; 
-    --app-building-01: #181818;
-    --app-building-02: #141414;
-    --app-building-03: #111;
-    --app-building-04: #101010;
+main {
+	width: 100%;
+	height: 250svh;
 }
 
 body {
-    background-color: var(--app-bg-color);
+	font-family: "Poppins", sans-serif;
 }
 
+header {
+	height: 100svh;
+	width: 100%;
+	position: relative;
+	display: grid;
+	grid-template-areas: "stack";
+	z-index: -10;
 
-.title-button {
-    max-width: 700px;
-    height: 100%;
-    padding-top: 100px;
-    position: fixed;
-    top: 50%; 
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    transition: all 0.2s ease;
-    justify-content: right;
-    align-items: center;
-    text-align: center;
+	&::before {
+		content: "";
+		position: fixed; 
+		top: 50px;
+		left: 50px;
+		width: 300px;
+		height: 300px;
+		border-radius:  50%;
+		background-color: #657;
+		z-index: 100; 
+}
+
+}
+
+header > * {
+	grid-area: stack;
+}
+
+header > img {
+	width: 100%;
+}
+
+.mountains {
+	z-index: 100;
+	position: absolute;
+	bottom: 200px;
+	object-fit: cover;
+	animation: mountains linear;
+	animation-timeline: scroll();
+}
+
+.cityscape-back {
+	z-index: 300;
+	position: absolute;
+	bottom: 0;
+	object-fit: cover;
+	animation: background linear;
+	animation-timeline: scroll();
+}
+
+.cityscape-front {
+	z-index: 600;
+	position:absolute;
+	bottom: 0;
+	object-fit: cover;
+	animation: foreground linear;
+	animation-timeline: scroll();
 }
 
 h1 {
-    width: auto; 
-    height: auto;
-    font-family: "Fredericka the Great", serif;
-    font-size: 120px;
-    font-weight: 400;
-    color: var(--app-text-light);
-    text-align: center;
-    line-height: 1.2; 
+	width: 100%; 	height: 250px;
+	color: #654;
+	font-size: 10rem;
+	line-height: 250px;
+	text-align: center;
+	position: fixed;
+	z-index: 500;
 }
 
+h1.hidden {
+	display: none;
+}
 
+@keyframes foreground {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(600px);
+  }
+}
+
+@keyframes background {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(400px);
+  }
+}
+
+@keyframes mountains {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-300px);
+  }
+}
+
+h2 {
+	width: 100%;
+}
+/*
+.hero-buffer {
+	width: 100%;
+	height: 250px;
+}
+/*
 .cityscape {
-    min-height: 100svh;     width: 100%; 
-    background-attachment: fixed;
-    top: 0;
-    left: 0;
-    align-items: flex-end;
-    z-index: 10;
+	position: relative;
 }
 
-.first-left, .first-right {
-    height: 80svh;
-    width: 200px;
-
-    background-color: var(--app-window-dark);
-    transition: all 1s;
-
-    table {
-        height: 100%;
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-    td {
-        border: 25px  solid var(--app-building-01);
-        border-bottom: 50px  solid var(--app-building-01);
-        padding: 8px;
-    }
+.cityscape::before {
+	content: '';
+	width: 100%;
+	height: 100px;
+	position: absolute;
+	top: 0;
+	z-index: -1;
+	background-image:url("../img/cityscape-back.svg");
+	background-size: contain;
 }
 
-    .first-left.active, .first-right.active {
-        box-shadow: inset 0 80svh var(--app-window-lit);
-    }
-
-.second-left, .second-right {
-    height: 70svh;
-    width: 125px;
-    background-color: var(--app-window-dark);
-    transition: all 1s;
-
-    table {
-        height: 100%;
-        width: 100%;
-        border-collapse: collapse;
-    }
-    
-    td {
-        border: 20px  solid var(--app-building-02);
-        border-bottom: 55px  solid var(--app-building-02);
-        padding: 8px;
-    }
-}
-   .second-left.active, .second-right.active {
-        box-shadow: inset 0 70svh var(--app-window-lit);
-    }
-
-.third-left, .third-right { 
-    height: 60svh;
-    width: 75px;
-    background-color: var(--app-window-dark);
-    transition: all 1s;
-
-    table {
-        height: 100%;
-        width: 100%;
-        border-collapse: collapse;
-    }
-    
-    td {
-        border: 15px  solid var(--app-building-03);
-        border-bottom: 60px  solid var(--app-building-03);
-        padding: 8px;
-    }
+.cityscape::after {
+	content: '';
+	width: 100%;
+	height: 150px;
+	position: absolute;
+	z-index: 1000;
+	top: 0;
+	background-image:url("../img/cityscape-front.svg");
+	background-size: contain;
 }
 
-    .third-left.active, .third-right.active {
-        box-shadow: inset 0 70svh var(--app-window-lit);
-    }
-    
-.forth-left, .forth-right {
-    height: 50svh;
-    width: 40px;
-    background-color: var(--app-window-dark);
-    transition: all 1s;
-   
-    table {
-        height: 100%;
-        width: 100%;
-        border-collapse: collapse;
-    }
-        
-        td {
-            border: 10px  solid var(--app-building-04);
-            border-bottom: 64px  solid var(--app-building-04);
-            padding: 8px;
-        }
-    }
-        .forth-left.active, .forth-right.active {
-            box-shadow: inset 0 70svh var(--app-window-lit);
-        }    
-    
-.horizon {
-    height: 160px; 
-    background-color: #ec9a00;
-    border-top-left-radius: 200px;
-    border-top-right-radius:200px;
-    border-bottom: solid 100px var(--app-bg-color);
-    width: 100%;
-    transition: all 1s ease;
+.cover {
+	height: 300px;
+	width: 100%;
+	z-index: 500;
+	background-color: #012;
+	position: absolute;
+	top: 350px;
 }
-    .horizon.active {
-        height: 0px;
-        border-radius: 0;
-    }
-
-        @media (max-width: 1000px) {
-            .first-left, .first-right {
-                transition: none;
-                display: none;
-            }
-
-            h1 {
-                font-size: 75px;
-            }
-          }
-
-          @media (max-width: 580px) {
-            .second-left, .second-right {
-                transition: none;
-                display: none;
-            }
-
-            h1 {
-                font-size: 50px;
-            }
-          }
-
-.glass-top {
-    position: absolute;
-    z-index: 100;
+*/
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 26px; 
+  color: #fff;
+  text-align: center;
+  transform: translateY(-100%);
+  transition: transform 0.6s ease;
 }
 
-article { 
-    height: 95svh;     width: 100%;
-    background: #fff url("../img/back-ground.jpg") no-repeat bottom center;
-    background-size:cover;
-    position: relative;
-    z-index: -10;
-    overflow: visible;
 
-    &::before {
-        content: "";
-        background-color: rgb(255 255 255 / 0.1);
-        backdrop-filter: brightness(0.75) blur(10px);
-        background-size: cover; 
-        background-position: center; 
-        position: absolute; 
-        top: 0;
-        left: 0;
-        width: 100%; 
-        height: 100%; 
-        z-index: 10;
-    }
+nav.visible {
+  transform: translateY(0);
+	z-index: 1000; 
 }
 
-h3 {
-    font-family: "Fredericka the Great", serif;
-    font-size: 64px;
-    font-weight: 400;
-    line-height: 100px;
-    color: #123;
-    writing-mode: vertical-lr;
-    margin: 75px 25px;
+
+.astronauts {
+	position: relative; 
+
+
+
+	&::before {
+			content: "";
+			position: absolute; 
+			top: 50px;
+			left: 50px;
+			width: 300px;
+			height: 300px;
+			background-color: #657;
+			z-index: -1; 
+	}
+
 }
-
-h4 {
-    margin: 45px 0 10px 25px;
-    font-family: "Fredericka the Great", serif;
-    font-size: 36px;
-    font-weight: 400;
-    color: #123;
-}
-
-h5 {
-    margin: 45px 0 10px 25px;
-    font-family: "Fredericka the Great", serif;
-    font-size: 48px;
-    font-weight: 400;
-    color: #fff;
-}
-
-.about-us {
-    width: 100%; height: 100%;
-    padding: 20px 160px 20px 0px;
-    p {
-        font-family: "Special Elite", system-ui;
-        font-weight: 400;
-        font-style: normal;
-        color: #fff;
-        padding: 10px;
-        margin: 10px;
-    }
-
-    button {    
-        width: fit-content;    height: fit-content; 
-        margin: 10px;
-        padding: 0 10px;
-        align-self: center;
-        background-color: transparent;
-        backdrop-filter: saturate(0%);
-        line-height: 50px;
-        font-family: "Special Elite", system-ui;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 24px;
-        color: #fff;
-        border: solid 2px #123;
-        border-radius: 15px;
-    }
-}
-
-.back-drop {
-    border-radius: 15px;
-}
-
-.title {
-    width: 100%;    height: 125px;
-    border-top-left-radius: 100px;
-    border-top-right-radius: 100px;
-    background-color: var(--app-bg-color);
-    text-align: center;
-    align-self: flex-end;
-    z-index: 100;
-}
-
- .photo-display {
-    column-count: 3; 
-    column-gap: 30px;
-    column-width: 300px;
-    padding: 20px;
-
-
-    img {
-        width: 100%; 
-        max-width: 100%; 
-        height: auto; 
-        margin-bottom: 30px;
-        border-radius: 8px;
-      }
- }
-
- .more {
-    width: 100%;    height: 500px;
-    background: #fff url("../img/poster-wall.jpg") no-repeat top center;
-    background-size: cover;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
- }
-
