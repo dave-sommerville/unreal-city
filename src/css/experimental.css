@@ -18,15 +18,11 @@ header {
 	animation-timeline: scroll();
 }
 
-
-
 .circle-object {
   position: absolute;
 	left: 800px;
 	top: 400px;
-	transform: scale(6);
-	transition: scale 6s ease;
-	animation: surfing 2s linear infinite;
+	animation: surfingcloser 3s linear;
 }
 
 @keyframes circle-animation {
@@ -148,4 +144,46 @@ header {
 	100% {
 		transform: translateX(100px) translateY(0); /* Start at the right */
 	}
+}
+
+@keyframes surfingcloser {
+  0% {
+    transform: translateX(100px) translateY(0); /* Start at the right */
+		transform: scale(1);
+  }
+  10% {
+    transform: translateX(0) translateY(75px); /* Move to the bottom */
+  }
+  20% {
+    transform: translateX(-100px) translateY(0); /* Move to the left */
+		transform: scale(2);
+  }
+	30% {
+		transform: translateX(0) translateY(100px); /* Move to the bottom */
+	}
+	40% {
+		transform: translateX(100px) translateY(0); /* End at the right */
+		transform: scale(3);
+	}
+  50% {
+    transform: translateX(0) translateY(75px); /* Move to the bottom */
+  }
+  60% {
+    transform: translateX(-100px) translateY(0); /* Move to the left */
+		transform: scale(4);
+  }
+	70% {
+		transform: translateX(0) translateY(100px); /* Move to the bottom */
+	}
+	80% {
+		transform: translateX(100px) translateY(0); /* Start at the right */
+		transform: scale(5);
+	}
+  90% {
+    transform: translateX(0) translateY(75px); /* Move to the bottom */
+  }
+  100% {
+    transform: translateX(-100px) translateY(-500px); /* Move to the left */
+		transform: scale(6);
+  }
 }

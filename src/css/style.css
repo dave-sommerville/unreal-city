@@ -1,189 +1,229 @@
 @charset "utf-8";
+/*-------------------------------------->
 
-main {
-	width: 100%;
-	height: 250svh;
+<--------------------------------------*/
+
+.block {
+	display: block;
 }
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
 
 body {
-	font-family: "Poppins", sans-serif;
+	background-color: #334;
+	overflow-x: hidden;
 }
 
-header {
-	height: 100svh;
-	width: 100%;
+/*-------------------------------------->
+Animations 
+<--------------------------------------*/
+
+header { 
 	position: relative;
-	display: grid;
-	grid-template-areas: "stack";
-	z-index: -10;
+	height: 90svh;
+	width: 100svw;
 
 	&::before {
-		content: "";
-		position: fixed; 
-		top: 50px;
-		left: 50px;
-		width: 300px;
-		height: 300px;
-		border-radius:  50%;
-		background-color: #657;
-		z-index: 100; 
-}
+		content: '';
+		width: 200px;
+		height: 200px;
+		border-radius: 50%;
 
-}
-
-header > * {
-	grid-area: stack;
-}
-
-header > img {
-	width: 100%;
-}
-
-.mountains {
-	z-index: 100;
-	position: absolute;
-	bottom: 200px;
-	object-fit: cover;
-	animation: mountains linear;
-	animation-timeline: scroll();
-}
-
-.cityscape-back {
-	z-index: 300;
-	position: absolute;
-	bottom: 0;
-	object-fit: cover;
-	animation: background linear;
-	animation-timeline: scroll();
-}
-
-.cityscape-front {
-	z-index: 600;
-	position:absolute;
-	bottom: 0;
-	object-fit: cover;
-	animation: foreground linear;
-	animation-timeline: scroll();
+	}
 }
 
 h1 {
-	width: 100%; 	height: 250px;
-	color: #654;
-	font-size: 10rem;
-	line-height: 250px;
-	text-align: center;
-	position: fixed;
-	z-index: 500;
+	
 }
 
-h1.hidden {
-	display: none;
-}
-
-@keyframes foreground {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(600px);
-  }
-}
-
-@keyframes background {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(400px);
-  }
-}
-
-@keyframes mountains {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-300px);
-  }
-}
-
-h2 {
-	width: 100%;
-}
-/*
-.hero-buffer {
-	width: 100%;
-	height: 250px;
-}
-/*
-.cityscape {
-	position: relative;
-}
-
-.cityscape::before {
-	content: '';
-	width: 100%;
-	height: 100px;
+.Z-100 {
+	width: 100svw;
+	height: auto;
+	object-fit: cover;
 	position: absolute;
-	top: 0;
-	z-index: -1;
-	background-image:url("../img/cityscape-back.svg");
-	background-size: contain;
+	bottom: -5svw;
+	z-index: -100;
+	animation-name: zMinus;
+  animation-timeline: scroll();
+  animation-duration: 1s; 
 }
 
-.cityscape::after {
-	content: '';
-	width: 100%;
-	height: 150px;
+.Z-00 {
+	width: 100svw;
+	height: auto;
+	object-fit: cover;
 	position: absolute;
-	z-index: 1000;
-	top: 0;
-	background-image:url("../img/cityscape-front.svg");
-	background-size: contain;
+	bottom: -15svw;
+	z-index: 0;
+	animation-name: zZero;
+  animation-timeline: scroll();
+  animation-duration: 1s; 
 }
 
-.cover {
-	height: 300px;
-	width: 100%;
-	z-index: 500;
+.idkyet {
+	width: 100svw;
+	height: auto;
+	object-fit: cover;
+	position: absolute;
+	bottom: 0;
+	z-index: 0;
+	animation-name: idkyet;
+  animation-timeline: scroll();
+  animation-duration: 1s; 
+}
+
+.Zplus100 {
+	width: 100svw;
+	height: auto;
+	object-fit: cover;
+	position: absolute;
+	bottom: -15svw;
+	z-index: 100;
+  animation-name: zPlus;
+  animation-timeline: scroll();
+  animation-duration: 1s; 
+}
+
+
+/*-------------------------------------->
+Animations 
+<--------------------------------------*/
+
+
+main {
+	width: 100%; 
 	background-color: #012;
-	position: absolute;
-	top: 350px;
-}
-*/
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  font-size: 26px; 
-  color: #fff;
-  text-align: center;
-  transform: translateY(-100%);
-  transition: transform 0.6s ease;
+	position: relative;
+	z-index: 1000;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr); 
+	grid-template-rows: repeat(3, 1fr); 
+	gap: 10px; 
+	place-items: center;
 }
 
-
-nav.visible {
-  transform: translateY(0);
-	z-index: 1000; 
+.intro {
+  grid-column: 1 / 3; /* Spans columns 1 and 2 */
+  grid-row: 1 / 3;    /* Spans rows 1 and 2 */
+  background-color: lightblue;
 }
 
+.glitch {
+  grid-column: 3 / 5; /* Spans columns 3 and 4 */
+  grid-row: 1 / 3;    /* Spans rows 1 and 2 */
+  background-color: lightcoral;
+}
 
-.astronauts {
-	position: relative; 
+.poetry {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	background: #fff url('../img/bookcover.jpeg') no-repeat center center;
+	background-size: 100%;
+	font-family: "Inconsolata", Arial, sans-serif;
+	text-align: center;
+	justify-content: center;
+	transition: all 0.2s ease-in-out;
+	grid-column: 1 / 2; /* First column of the third row */
+  grid-row: 3 / 4; 
+}
 
+article:hover {
+	background-size: 130%;
 
-
-	&::before {
-			content: "";
-			position: absolute; 
-			top: 50px;
-			left: 50px;
-			width: 300px;
-			height: 300px;
-			background-color: #657;
-			z-index: -1; 
+	h3 {
+		transform: scale(1.3) translateY(-15px);
 	}
+}
 
+h3 {
+	transform: translateY(-25px);
+	font-size: 1.8rem;
+	transition: all 0.2s ease-in-out;
+}
+
+.poetry {
+	width: 275px;
+	height: 275px;
+	background: #fff url('../img/bookcover.jpeg') no-repeat center center;
+	background-size: 100%;
+	font-family: "Inconsolata", Arial, sans-serif;
+	text-align: center;
+	justify-content: center;
+	transition: all 0.2s ease-in-out;
+	grid-column: 1 / 2; /* First column of the third row */
+  grid-row: 3 / 4; 
+
+}
+
+.photos  {
+	width: 100%;
+	height: 275px;
+	background: #276;
+	background-size: 100%;
+	font-family: "Inconsolata", Arial, sans-serif;
+	text-align: center;
+	justify-content: center;
+	transition: all 0.2s ease-in-out;
+	grid-column: 2 / 4; 
+  grid-row: 3 / 4; 
+
+}
+
+.gameroom {
+	width: 100%;
+	height: 275px;
+	background: #576;
+	background-size: 100%;
+	font-family: "Inconsolata", Arial, sans-serif;
+	text-align: center;
+	justify-content: center;
+	transition: all 0.2s ease-in-out;
+	grid-column: 4 / 5; /* First column of the third row */
+  grid-row: 3 / 4; 
+
+}
+
+/*-------------------------------------->
+Animations 
+<--------------------------------------*/
+
+@keyframes zMinus {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(0, -40svw);
+	}
+}
+
+@keyframes zZero {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(0, 14svw);
+	}
+}
+
+@keyframes idkyet {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(0, 12svw);
+	}
+}
+
+@keyframes zPlus {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(0, -15svw);
+	}
 }
