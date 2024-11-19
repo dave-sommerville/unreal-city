@@ -8,20 +8,18 @@ function listen(event, element, callback) {
   return element.addEventListener(event, callback);
 }
 
-const headerSmall = select("nav");
-const headerLarge = select("h1");
-const heroBuffer = select(".hero-buffer");
-const headerSwitchTrigger = heroBuffer.offsetHeight;
+const navBar = select(".nav-wrapper");
+const heroBanner = select("header");
+
+const headerSwitch = heroBanner.offsetHeight;
 
 listen("scroll", window, () => {
   const trigger = window.scrollY;
 
-  if (trigger > headerSwitchTrigger) {
-    headerSmall.classList.add("visible");
-    headerLarge.classList.add("hidden");
+  if (trigger > headerSwitch) {
+    navBar.classList.add("visible");
   } else {
-    headerSmall.classList.remove("visible");
-    headerLarge.classList.remove("hidden");
+    navBar.classList.remove("visible");
   }
 });
 
