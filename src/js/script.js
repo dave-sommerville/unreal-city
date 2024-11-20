@@ -9,7 +9,7 @@ function listen(event, element, callback) {
 }
 
 const navBar = select(".nav-wrapper");
-const heroBanner = select("header");
+const heroBanner = select(".Zplus100");
 
 const headerSwitch = heroBanner.offsetHeight;
 

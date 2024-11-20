@@ -26,7 +26,15 @@
 	cursor: pointer;
 }
 
+/*				One is closest 				*/
+:root {
+	--app-layer-one: #012;
+	--app-layer-two: #123;
+	--app-layer-three: #234;
+	--app-layer-four: #345;
+	--app-bg-clr: #404;
 
+}
 
 a {
 	text-decoration: none;
@@ -38,11 +46,10 @@ ul {
 }
 
 body {
-	background-color: #334;
+	background-color: var(--app-layer-one);
 	overflow-x: hidden;
 	color: #fefefe;
 	font-family: "Poppins", Arial, sans-serif;
-	height: 200svh;
 }
 
 /*-------------------------------------->
@@ -51,8 +58,10 @@ Animations
 
 header { 
 	position: relative;
-	height: 90svh;
-	width: 100svw;
+	height: 70svh;
+	width: 100%;
+	background-color: var(--app-bg-clr);
+	z-index: -2000;
 
 	&::before {
 		content: '';
@@ -64,15 +73,26 @@ header {
 		border-radius: 50%;
 		background-color: #fefefe;
 	}
+	&::after {
+		content: '';
+		width: 100svw;
+		height: 200px;
+		position: absolute;
+		bottom: 0;
+		z-index: -100;
+		background-color: var(--app-layer-one);
+	}
+
 }
 
 h1 {
 	width: 100%;
-	font-size: 3.5rem;
+	font-size: 6rem;
 	position: fixed;
 	text-align: center;
 	margin-top: 50px;
-	z-index: -100;
+	z-index: 10;
+	color: #fefefe;
 }
 
 .Z-100 {
@@ -80,20 +100,22 @@ h1 {
 	height: auto;
 	object-fit: cover;
 	position: absolute;
-	bottom: -5svw;
+	bottom: 12svw;
 	z-index: -100;
 	animation-name: zMinus;
-  animation-timeline: scroll();
-  animation-duration: 1s; 
+	animation-timeline: scroll();
+	animation-duration: 1s;
+
 }
+
 
 .Z-00 {
 	width: 100svw;
-	height: auto;
+	height: 400px;
 	object-fit: cover;
 	position: absolute;
-	bottom: -15svw;
-	z-index: 0;
+	bottom: -5svw;
+	z-index: 50;
 	animation-name: zZero;
   animation-timeline: scroll();
   animation-duration: 1s; 
@@ -101,10 +123,10 @@ h1 {
 
 .idkyet {
 	width: 100svw;
-	height: auto;
+	height: 600px;
 	object-fit: cover;
 	position: absolute;
-	bottom: 0;
+	bottom: 5svw;
 	z-index: 0;
 	animation-name: idkyet;
   animation-timeline: scroll();
@@ -113,7 +135,7 @@ h1 {
 
 .Zplus100 {
 	width: 100svw;
-	height: auto;
+	height: 500px;
 	object-fit: cover;
 	position: absolute;
 	bottom: -15svw;
@@ -129,26 +151,40 @@ Animations
 <--------------------------------------*/
 
 
-main {
+.display {
 	width: 100%; 
-	height: fit-content;
-	background-color: #012;
+	height: 90svh;
+	background: #456 url('../img/F38FA345-A5A3-4F5D-AF67-83B6365F96D4.GIF') no-repeat center center;
+	background-size: cover;
 	position: relative;
-	z-index: 1000;
+	z-index: 500;
+
+
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1000;
+		border-radius: 15px;
+		background: url('../img/concrete.png') no-repeat center center;
+		background-size: cover;
+	}
 }
 
 .nav-wrapper {
 	width: 100%;
-	height: 80px;
-	line-height: 80px;
+	height: 10svh;
+	line-height: 10svh;
 	justify-content: center;
-	background-color: #012;
+	background-color: var(--app-layer-one);
 	transform: translateY(-100%);
   transition: transform 0.4s ease;
 	position: fixed;
 	top: 0;
 	left: 0;
-  z-index: 1000; 
+  z-index: 1200; 
 }
 
 .visible {
@@ -181,7 +217,7 @@ Animations
 		transform: translate(0, 0);
 	}
 	100% {
-		transform: translate(0, -40svw);
+		transform: translate(0, 30svw);
 	}
 }
 
@@ -190,7 +226,7 @@ Animations
 		transform: translate(0, 0);
 	}
 	100% {
-		transform: translate(0, 14svw);
+		transform: translate(0, -15svw);
 	}
 }
 
@@ -199,7 +235,7 @@ Animations
 		transform: translate(0, 0);
 	}
 	100% {
-		transform: translate(0, 12svw);
+		transform: translate(0, 7svw);
 	}
 }
 
@@ -208,117 +244,6 @@ Animations
 		transform: translate(0, 0);
 	}
 	100% {
-		transform: translate(0, -15svw);
+		transform: translate(0, -16svw);
 	}
 }
-
-
-/*
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modal Transition</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <button id="open-modal">Open Modal</button>
-
-  <div id="modal" class="modal hidden">
-    <div class="modal-content">
-      <span id="close-modal" class="close-button">&times;</span>
-      <h2>Modal Title</h2>
-      <p>This is a modal with a smooth transition.</p>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
-
-/* Base styles 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f4f4f4;
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-/* Modal styles 
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(1.1); /* Slightly larger for a pop-in effect 
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-}
-
-.modal-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-/* Active modal state 
-.modal.visible {
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1);
-}
-
-// Select elements
-const openModalButton = document.getElementById('open-modal');
-const closeModalButton = document.getElementById('close-modal');
-const modal = document.getElementById('modal');
-
-// Open modal
-openModalButton.addEventListener('click', () => {
-  modal.classList.remove('hidden');
-  modal.classList.add('visible');
-});
-
-// Close modal
-closeModalButton.addEventListener('click', () => {
-  modal.classList.remove('visible');
-  modal.classList.add('hidden');
-});
-/*
