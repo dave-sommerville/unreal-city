@@ -8,19 +8,10 @@ function listen(event, element, callback) {
   return element.addEventListener(event, callback);
 }
 
-const navBar = select(".nav-wrapper");
-const heroBanner = select(".Zplus100");
-
-const headerSwitch = heroBanner.offsetHeight;
-
-listen("scroll", window, () => {
-  const trigger = window.scrollY;
-
-  if (trigger > headerSwitch) {
-    navBar.classList.add("visible");
-  } else {
-    navBar.classList.remove("visible");
+window.addEventListener("scroll", () => {
+  // Check if the user has scrolled to the bottom of the page
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    console.log("You've reached the bottom of the page!");
+    // Trigger your desired effect here
   }
 });
-
-
