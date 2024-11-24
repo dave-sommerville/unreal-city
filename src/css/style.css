@@ -1,22 +1,14 @@
 @charset "utf-8";
 /*-------------------------------------->
-
-- Set trigger/timeline for computer animation 
-	- For Responsive
-	- For bottom title / links to show
 - Ensure responsiveness 
-- Write about us and/or animation text 
+	- Text
+	- Icons
 - Clean up css and js
-- Create and link other pages 
+- Other pages 
 	- Poetry (mostly done) 
 	- Gallery
 		- Small header animation
 		- Just columns 
-	- Games room
-		- See projects list 
-	- Experimental page 
-		- Could add bare bones page, but shouldn't spend too much focus
-
 
 <--------------------------------------*/
 
@@ -160,12 +152,12 @@ header {
 
 .mountains {
 	width: 100svw;
-	height: 400px;
+	height: 600px;
 	object-fit: cover;
 	position: absolute;
-	bottom: 12svw;
+	bottom: 4svw;
 	z-index: -100;
-	animation-name: zMinus;
+	animation-name: zFarBack;
 	animation-timeline: scroll();
 	animation-duration: 1s;
 }
@@ -177,7 +169,7 @@ header {
 	position: absolute;
 	bottom: -5svw;
 	z-index: 50;
-	animation-name: zZero;
+	animation-name: zBack;
   animation-timeline: scroll();
   animation-duration: 1s; 
 }
@@ -189,7 +181,7 @@ header {
 	position: absolute;
 	bottom: 5svw;
 	z-index: 0;
-	animation-name: idkyet;
+	animation-name: zMid;
   animation-timeline: scroll();
   animation-duration: 1s; 
 }
@@ -201,7 +193,7 @@ header {
 	position: absolute;
 	bottom: -15svw;
 	z-index: 100;
-  animation-name: zPlus;
+  animation-name: zFront;
   animation-timeline: scroll();
   animation-duration: 1s; 
 
@@ -297,7 +289,7 @@ LANDING
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	animation: enbiggen 20s ease;
+	animation: enbiggen 400s ease 3s forwards;
 }
 
 .about-modal, .gallery-modal, .poetry-modal, .games-modal { 
@@ -326,7 +318,7 @@ LANDING
 Animations 
 <--------------------------------------*/
 
-@keyframes zMinus {
+@keyframes zFarBack {
 	0% {
 		transform: translate(0, 0);
 	}
@@ -335,7 +327,7 @@ Animations
 	}
 }
 
-@keyframes zZero {
+@keyframes zBack {
 	0% {
 		transform: translate(0, 0);
 	}
@@ -344,7 +336,7 @@ Animations
 	}
 }
 
-@keyframes idkyet {
+@keyframes zMid {
 	0% {
 		transform: translate(0, 0);
 	}
@@ -353,7 +345,7 @@ Animations
 	}
 }
 
-@keyframes zPlus {
+@keyframes zFront {
 	0% {
 		transform: translate(0, 0);
 	}
@@ -367,7 +359,7 @@ Animations
 		transform: scale(1) translate(0, 0);
 	}
 	100% {
-		transform: scale(20) translate(0, -1svw);
+		transform: scale(25) translate(0, -0.75svw);
 	}
 }
 
