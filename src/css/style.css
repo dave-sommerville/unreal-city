@@ -52,6 +52,11 @@ Local Utils
 	cursor: pointer;
 }
 
+.hidden {
+	opacity: 0;
+	display: none;
+}
+
 /*-------------------------------------->
 Roots and Resets
 <--------------------------------------*/
@@ -163,7 +168,8 @@ nav {
 	font-size: 3rem;
 	color: #fefefe;
 	position: absolute;
-	top: -100px;
+	top: -130px;
+	transform: translateY(100px);
 	z-index: 300;
 
 	ul {
@@ -189,9 +195,9 @@ LANDING
 
 .wrapper {
 	width: 100%;
-	height: 600px;
+	height: 700px;
 	padding: 40px;
-	justify-content: center;
+	justify-content: flex-end;
 	align-items: center;
 	position: relative;
 	z-index: 500;
@@ -211,14 +217,15 @@ LANDING
 
 .display {
 	width: 700px; 
-	height: 600px;
+	height: 520px;
 	background: #456 url('../img/clr-wave.gif') no-repeat center center;
 	background-size: cover;
 	border-radius: 15px;
 	position: relative;
 	overflow: hidden;
 	z-index: 500;
-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6), -2px -2px 5px rgba(255, 255, 255, 0.8);
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6), 
+		-2px -2px 5px rgba(255, 255, 255, 0.8);
 
 	&::before {
 		content: '';
@@ -241,17 +248,19 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6), -2px -2px 5px rgba(255, 255, 255, 0.
 	animation: enbiggen 20s ease;
 }
 
-.modal { 
+.about-modal, .gallery-modal, .poetry-modal, .games-modal { 
 	width: 700px; 
-	height: 600px;
+	height: 520px;
 	color: #122;
 	font-size: 4rem;
+	padding: 15px; 
 	background-size: cover;
-	background-color: rgba(64, 64, 64, 0.8); /* Semi-transparent */
+	background-color: rgba(200, 200, 200, 0.5); /* Semi-transparent */
 	border-radius: 15px;
-	backdrop-filter: blur(5px); /* Blurs everything behind the modal */	position: absolute;
-	bottom: 0;
+	backdrop-filter: blur(15px); /* Blurs everything behind the modal */	position: absolute;
 	z-index: 2000;
+	position: absolute;
+	bottom: 40px;
 }
 
 
