@@ -25,7 +25,7 @@ Local Utils
 <--------------------------------------*/
 
 .container {
-	width: min(100% - 30px, 1200px);
+	width: min(100% - 30px, 1100px);
 	margin-inline: auto;
 }
 
@@ -87,6 +87,41 @@ body {
 	font-family: "Poppins", Arial, sans-serif;
 }
 
+p {
+	font-size: 1.6rem;
+	color: var(--app-layer-one);
+
+	a {
+		font-weight: 500;
+		padding: 25px;
+		border-radius: 50px;
+		background-color: rgb(240 240 240 / 0);
+		transition: all 0.75s ease-in;
+		line-height: 100px;
+	}
+
+	a:hover {
+		background-color: rgb(240 240 240 / 0.4);
+	}
+}
+
+h1 {
+	width: 100%;
+	font-size: 6rem;
+	position: fixed;
+	text-align: center;
+	margin-top: 50px;
+	z-index: 10;
+	color: #fefefe;
+}
+
+h2 {
+	/* positioned all funky against the display, opacity transition */
+}
+
+h3 {
+	font-size: 3.2rem;
+}
 /*-------------------------------------->
 HERO BANNER 
 <--------------------------------------*/
@@ -99,16 +134,6 @@ header {
 	background-attachment: fixed;
 	background-size: cover;
 	z-index: -2000;
-}
-
-h1 {
-	width: 100%;
-	font-size: 6rem;
-	position: fixed;
-	text-align: center;
-	margin-top: 50px;
-	z-index: 10;
-	color: #fefefe;
 }
 
 .mountains {
