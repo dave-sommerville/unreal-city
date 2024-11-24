@@ -108,6 +108,7 @@ p {
 h1 {
 	width: 100%;
 	font-size: 6rem;
+	font-weight: 500;
 	position: fixed;
 	text-align: center;
 	margin-top: 50px;
@@ -116,8 +117,19 @@ h1 {
 }
 
 h2 {
-	/* positioned all funky against the display, opacity transition */
+	font-size: 7.5rem;
+	font-weight: 700;
+	letter-spacing: -75px;
+	writing-mode: vertical-rl; /* Or vertical-lr */
+  text-orientation: upright; 
 }
+
+.vert-title {
+	position: absolute;
+	bottom: 0;
+	justify-content: space-between;
+}
+
 
 h3 {
 	font-size: 3.2rem;
@@ -196,6 +208,10 @@ nav {
 	top: -130px;
 	transform: translateY(100px);
 	z-index: 300;
+	animation-name: navBar;
+	animation-timeline: scroll();
+	animation-duration: 1s; 
+
 
 	ul {
 		height: 100px;
@@ -280,14 +296,19 @@ LANDING
 	font-size: 4rem;
 	padding: 15px; 
 	background-size: cover;
-	background-color: rgba(200, 200, 200, 0.5); /* Semi-transparent */
+	background-color: rgba(200, 200, 200, 0.5);
 	border-radius: 15px;
-	backdrop-filter: blur(15px); /* Blurs everything behind the modal */	position: absolute;
+	backdrop-filter: blur(15px); 
 	z-index: 2000;
 	position: absolute;
 	bottom: 40px;
 }
 
+.about-modal {
+	p {
+		font-size: 1.4rem;
+	}
+}
 
 /*-------------------------------------->
 Animations 
@@ -335,5 +356,13 @@ Animations
 	}
 	100% {
 		transform: scale(20) translate(0, -1svw);
+	}
+}
+@keyframes navBar {
+	0% {
+		transform: translateY(100px);
+	}
+	100% {
+		transform: translateY(0);
 	}
 }
