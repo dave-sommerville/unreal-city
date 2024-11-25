@@ -314,6 +314,66 @@ LANDING
 	}
 }
 
+footer {
+	width: 100%;
+	height: 20px;
+	text-align: center;
+
+	i {
+		color: #fefefe;
+	}
+}
+
+.hidden-modal { 
+	width: 50svw;
+	min-width: 40svw; 
+	height: 60svh;
+	color: #122;
+	font-size: 4rem;
+	padding: 15px; 
+	background-size: cover;
+	background-color: var(--app-layer-one);
+	border-radius: 15px;
+	backdrop-filter: blur(15px); 
+	z-index: 2000;
+	position: absolute;
+	bottom: 40px;
+}
+
+:root {
+	--cracks-w: 500px;
+	--cracks-l: 400px;
+}
+
+.cracks-effect-1 {
+	--_cracks-w: var(--cracks-w);
+	--_cracks-l: var(--cracks-l);
+
+	width: 400px;
+	height: 500px;
+	position: relative; 
+
+	img {
+			width: 400px;
+			height: 500px;
+	}
+
+	&::before {
+			content: "";
+			position: absolute; 
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #fff url("../img/vs-code-bg.jpg") repeat center center;
+			background-attachment: fixed;
+			background-size: cover; 
+			z-index: -1; 
+	}
+}
+
+
+
 /*-------------------------------------->
 Animations 
 <--------------------------------------*/

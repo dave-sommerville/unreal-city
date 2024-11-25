@@ -18,12 +18,15 @@ const aboutButton = select('.about');
 const galleryButton = select('.gallery');
 const poetryButton = select('.poetry');
 const gamesButton = select('.games');
+const hiddenButton = select('.hidden-button');
 
 const aboutModal = select('.about-modal');
 const galleryModal = select('.gallery-modal');
 const poetryModal = select('.poetry-modal');
 const gamesModal = select('.games-modal');
+const hiddenModal = select('.hidden-modal');
 const modals = selectAll('.modal');
+
 
 function showTargetDiv(modal) {
   modals.forEach((m) => m.classList.add('hidden')); 
@@ -42,6 +45,8 @@ listen('click', aboutButton, () => showTargetDiv(aboutModal));
 listen('click', galleryButton, () => showTargetDiv(galleryModal));
 listen('click', poetryButton, () => showTargetDiv(poetryModal));
 listen('click', gamesButton, () => showTargetDiv(gamesModal));
+listen('click', hiddenButton, ()=> showTargetDiv(hiddenModal));
+
 
 document.addEventListener('click', (event) => hideTargetDiv(event));
 
