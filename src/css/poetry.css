@@ -16,7 +16,7 @@ a, ul {
 }
 header {
 	width: 100svw;	
-	height: 100%;
+	height: 100svh;
 	background: #fff url("../img/bookcover.jpeg") no-repeat center center;
 	background-size: cover;
 	position: relative;
@@ -53,7 +53,7 @@ h3 {
 p {
 	color: var(--app-text-color);
 	line-height: 25px;
-	font-size: clamp(1rem 1.4em 1.8rem);
+	font-size: 1.2em;
 	font-weight: 600;
 }
 
@@ -91,7 +91,7 @@ article {
 	margin-top: 25px;
 }
 
-
+/* 
 @media (orientation: portrait) {
   article {
     column-count: 1;
@@ -103,12 +103,26 @@ article {
 		width: 600px;
 		margin: 5px auto;
 	}
-}
+} */
 
-@media (orientation: landscape) {
+@media (max-width: 840px) {
+	p {
+		font-size: 1rem;
+	}
   article {
 		column-count: 2;
 		column-gap: 25px;
 		column-rule: #456;
 	}
 }
+
+
+/* 
+@media (max-width: 525px) {
+  h1 {
+		font-size: 3rem;
+	}
+	main {
+    column-count: 1;
+  }
+} */
