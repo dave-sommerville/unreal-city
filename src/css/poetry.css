@@ -39,7 +39,7 @@ h1 {
 
 h2 {
 	color: var(--app-text-color);
-	font-size: 2.4rem;
+	font-size: 2.7rem;
 	font-weight: 600;
 }
 
@@ -58,14 +58,10 @@ p {
 }
 
 section {
-	align-items: center;
-  justify-content: center;	
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	margin: 5px 0;
 	height: 100vh;
 	width: 100%;
+	align-items: center;
+	justify-content: center;
 	background: #ddd url("../img/paper-bg.jpg") no-repeat center center;
 	background-size: cover;
 
@@ -78,51 +74,14 @@ section {
 }
 
 article {
-	height: 100vh;
-	column-count: 2;
-	column-gap: 20px;
-	margin: 5px 0;
+	width: 100%;
+	height: fit-content;
+	padding: 50px 20svw;
 	background: #456 url("../img/paper-bg.jpg") no-repeat center center;
 	background-size: cover;
-	padding: 50px;
 }
 
 .break {
 	margin-top: 25px;
 }
 
-/* 
-@media (orientation: portrait) {
-  article {
-    column-count: 1;
-		width: 600px;
-		padding: 75px 25px;
-		margin: 5px auto;
-  }
-	section {
-		width: 600px;
-		margin: 5px auto;
-	}
-} */
-
-@media (max-width: 840px) {
-	p {
-		font-size: 1rem;
-	}
-  article {
-		column-count: 2;
-		column-gap: 25px;
-		column-rule: #456;
-	}
-}
-
-
-/* 
-@media (max-width: 525px) {
-  h1 {
-		font-size: 3rem;
-	}
-	main {
-    column-count: 1;
-  }
-} */
