@@ -26,5 +26,5 @@ on my city outings.
 - Games Room
 - [redacted]
 
-![Website Preview](./src/img/scrnshot-preview.jpg)
+![Website Preview](./src/img/screenshot-preview.jpg)
 
